@@ -356,7 +356,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-block:28px 40px;
   var slug=function(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,40)};
   function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
 
-  var API_BASE = (window.TB_API_BASE || 'https://thokbazaar.onrender.com/api').replace(/\/$/, ''); // Change this only if your backend URL changes.
+  var API_BASE = 'https://thokbazaar.onrender.com/api'; // Change this only if your backend URL changes.
   var authToken = store('tb_token') || '';
   var currentUser = null;
   var apiBusy = false;
