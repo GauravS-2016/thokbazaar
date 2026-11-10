@@ -61,6 +61,7 @@ function clean(v, max=200) { return String(v ?? "").trim().slice(0,max); }
 function fail(res, status, error) { return res.status(status).json({error}); }
 
 const app = express();
+app.set("trust proxy", 1);
 app.disable("x-powered-by");
 app.use(helmet({ contentSecurityPolicy: false }));
 const allowed = (process.env.CORS_ORIGIN || "").split(",").map(x => x.trim()).filter(Boolean);
