@@ -1,0 +1,23 @@
+{
+  "name": "thokbazaar-store-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "API backend for thokbazaar.store wholesale B2B marketplace",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "check": "node --check src/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
