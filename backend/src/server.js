@@ -170,9 +170,9 @@ app.post("/api/requirements",(req,res)=>{
 });
 app.get("/api/requirements",(_req,res)=>res.json({requirements:[...db.requirements].sort((a,b)=>String(b.ts).localeCompare(String(a.ts)))}));
 
-app.get("*",(req,res,next)=>{
-  if (req.path.startsWith("/api/")) return next();
-  res.sendFile(path.join(root,"public","index.html"));
+app.get("/", (req, res) => {
+  res.redirect("https://thokbazaar.store");
 });
+
 app.use((err,_req,res,_next)=>{ console.error(err); res.status(500).json({error:"Internal server error."}); });
 app.listen(PORT,()=>console.log(`Thokbazaar running at http://localhost:${PORT}`));
